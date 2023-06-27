@@ -1,7 +1,6 @@
-
 import 'package:simplehttpserver/src/internal/console/console.dart';
 
-const banner ='''
+const banner = '''
    _____ _                 __     __  __________________                                
   / ___/(_)___ ___  ____  / /__  / / / /_  __/_  __/ __ ________  ______   _____  _____
   __ / / __ -__ / __ / / _ / /_/ / / /   / / / /_/ / ___/ _ / ___/ | / / _ / ___/
@@ -11,15 +10,15 @@ const banner ='''
 ''';
 
 // Version is the current version
-const Version = '0.0.1';
+const version = '0.0.1';
 
 // showBanner is used to show the banner to the user
 void showBanner() {
-	write('${ansiSetColor(33)} $banner');
+  write('${ansiSetColor(33)} $banner');
 }
-// Options of the tool
-// Type Options; {
+
 // 	ListenAddress   string
+// 	HTTPHeaders     HTTPHeaders
 // 	Folder          string
 // 	BasicAuth       string
 // 	username        string
@@ -42,5 +41,3 @@ void showBanner() {
 // 	MaxDumpBodySize int
 // 	Python          bool
 // 	CORS            bool
-// 	HTTPHeaders     HTTPHeaders
-// }
