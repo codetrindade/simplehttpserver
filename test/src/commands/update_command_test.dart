@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:mason_logger/mason_logger.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:pub_updater/pub_updater.dart';
 import 'package:simplehttpserver/src/command_runner.dart';
 import 'package:simplehttpserver/src/commands/commands.dart';
 import 'package:simplehttpserver/src/version.dart';
-import 'package:pub_updater/pub_updater.dart';
 import 'package:test/test.dart';
 
 class _MockLogger extends Mock implements Logger {}
