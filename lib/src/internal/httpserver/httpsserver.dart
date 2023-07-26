@@ -11,7 +11,7 @@ class HttpsServer {
 // final directory = await getExternalStorageDirectory();
 
 // Get a handle to the asset bundle.
-    final bundle = rootPrefix(r'Users\SEAKER\Downloads');
+    final bundle = rootPrefix(r'Users\');
 // Get a list of all assets in the 'assets' folder.
     final assets = Directory(bundle).listSync();
 // print all asset that will be copied
