@@ -18,7 +18,7 @@ const description = 'A Very Good Project created by Very Good CLI.';
 /// $ simplehttpserver --version
 /// ```
 /// {@endtemplate}
-class SimplehttpserverCommandRunner extends CompletionCommandRunner<int> {
+class SimplehttpserverCommandRunner extends CompletionCommandRunner<int> {  
   /// {@macro simplehttpserver_command_runner}
   SimplehttpserverCommandRunner({
     Logger? logger,
@@ -26,7 +26,7 @@ class SimplehttpserverCommandRunner extends CompletionCommandRunner<int> {
   })  : _logger = logger ?? Logger(),
         _pubUpdater = pubUpdater ?? PubUpdater(),
         super(executableName, description) {
-
+       
     showBanner();
     // Add root options and flags
     argParser
@@ -60,15 +60,20 @@ class SimplehttpserverCommandRunner extends CompletionCommandRunner<int> {
 
     // Add sub commands
     addCommand(SampleCommand(logger: _logger));
-    addCommand(ListenCommand(logger: _logger));
+    addCommand(ListenCommand(logger: _logger, options: _options));
     addCommand(UpdateCommand(logger: _logger, pubUpdater: _pubUpdater));
   }
+
 
   @override
   void printUsage() => _logger.info(usage);
 
   final Logger _logger;
   final PubUpdater _pubUpdater;
+  late final ArgResults _options;
+
+ 
+
 
   @override
   Future<int> run(Iterable<String> args) async {
@@ -77,6 +82,7 @@ class SimplehttpserverCommandRunner extends CompletionCommandRunner<int> {
       if (topLevelResults['verbose'] == true) {
         _logger.level = Level.verbose;
       }
+      _options=topLevelResults;
       return await runCommand(topLevelResults) ?? ExitCode.success.code;
     } on FormatException catch (e, stackTrace) {
       // On format errors, show the commands error message, root usage and
