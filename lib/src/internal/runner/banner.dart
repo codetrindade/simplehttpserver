@@ -16,28 +16,3 @@ const version = '0.0.1';
 void showBanner() {
   write('${ansiSetColor(33)} $banner');
 }
-
-// 	ListenAddress   string
-// 	HTTPHeaders     HTTPHeaders
-// 	Folder          string
-// 	BasicAuth       string
-// 	username        string
-// 	password        string
-// 	Realm           string
-// 	TLSCertificate  string
-// 	TLSKey          string
-// 	TLSDomain       string
-// 	HTTPS           bool
-// 	Verbose         bool
-// 	EnableUpload    bool
-// 	EnableTCP       bool
-// 	RulesFile       string
-// 	TCPWithTLS      bool
-// 	Version         bool
-// 	Silent          bool
-// 	Sandbox         bool
-// 	MaxFileSize     int
-// 	HTTP1Only       bool
-// 	MaxDumpBodySize int
-// 	Python          bool
-// 	CORS            bool
